@@ -2,25 +2,7 @@ import styled from "styled-components";
 import kakaoImg from "../asset/kakao_login.png";
 import naverImg from "../asset/naver_login.png";
 
-const Login = () => {
-    // Kakao
-    const REST_API_KEY = "2619591c3502b856bfe4fd9a319bf861";
-    const REDIRECT_URI = "http://localhost:3000/oauth";
-    const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
-
-    const clickKakaoLogin = () => {
-        window.location.href = KAKAO_AUTH_URL;
-    }
-
-    // Naver
-    const CLIENT_ID = "L76zooznWQC482xxpf7B";
-    const STATE = "test"
-    const NAVER_AUTH_URL = `https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=${CLIENT_ID}&state=${STATE}&redirect_uri=${REDIRECT_URI}`;
-
-    const clickNaverLogin = () => {
-        window.location.href = NAVER_AUTH_URL;
-    }
-
+const Login = ({ onKakaoLogin, onNaverLogin }) => {
     return (
         <Container>
             <LoginTitleText>로그인 하쇼</LoginTitleText>
@@ -32,8 +14,8 @@ const Login = () => {
                 <LoginButton>로그인</LoginButton>
             </LoginContainer>
             <SocialLoginButtonContainer>
-                <SocialLoginButton src={kakaoImg} onClick={clickKakaoLogin}/>
-                <SocialLoginButton src={naverImg} onClick={clickNaverLogin}/>
+                <SocialLoginButton src={kakaoImg} onClick={onKakaoLogin}/>
+                <SocialLoginButton src={naverImg} onClick={onNaverLogin}/>
             </SocialLoginButtonContainer>
         </Container>
     )
