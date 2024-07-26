@@ -1,6 +1,6 @@
 import React from 'react';
 import Login from '../view/Login';
-import { getKakaoUrl, getNaverUrl } from '../model/LoginModel';
+import { getKakaoUrl, getNaverUrl, getGoogleUrl } from '../model/LoginModel';
 
 const LoginController = () => {
     const handleKakaoLogin = () => {
@@ -11,7 +11,11 @@ const LoginController = () => {
         window.location.href = getNaverUrl();
     };
 
-    return <Login onKakaoLogin={handleKakaoLogin} onNaverLogin={handleNaverLogin} />;
+    const handleNaverLogin = () => {
+        window.location.href = getGoogleUrl();
+    };
+
+    return <Login onKakaoLogin={handleKakaoLogin} onNaverLogin={handleNaverLogin} onGoogleLogin={handleNaverLogin}/>;
 };
 
 export default LoginController;

@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import kakaoImg from "../asset/kakao_login.png";
 import naverImg from "../asset/naver_login.png";
+import googleImg from "../asset/google_login.png";
 
-const Login = ({ onKakaoLogin, onNaverLogin }) => {
+const Login = ({ onKakaoLogin, onNaverLogin, onGoogleLogin }) => {
     return (
         <Container>
             <LoginTitleText>로그인 하쇼</LoginTitleText>
@@ -16,6 +17,7 @@ const Login = ({ onKakaoLogin, onNaverLogin }) => {
             <SocialLoginButtonContainer>
                 <SocialLoginButton src={kakaoImg} onClick={onKakaoLogin}/>
                 <SocialLoginButton src={naverImg} onClick={onNaverLogin}/>
+                <SocialLoginButton src={googleImg} onClick={onGoogleLogin}/>
             </SocialLoginButtonContainer>
         </Container>
     )
