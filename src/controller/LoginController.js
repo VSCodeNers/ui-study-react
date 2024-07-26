@@ -11,11 +11,11 @@ const LoginController = () => {
         window.location.href = getNaverUrl();
     };
 
-    const handleNaverLogin = () => {
+    const handleGoogleLogin = () => {
         window.location.href = getGoogleUrl();
     };
 
-    return <Login onKakaoLogin={handleKakaoLogin} onNaverLogin={handleNaverLogin} onGoogleLogin={handleNaverLogin}/>;
+    return <Login onKakaoLogin={handleKakaoLogin} onNaverLogin={handleNaverLogin} onGoogleLogin={handleGoogleLogin}/>;
 };
 
 export default LoginController;

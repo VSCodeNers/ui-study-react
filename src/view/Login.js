@@ -67,12 +67,15 @@ const LoginButton = styled.button`
 `;
 const SocialLoginButtonContainer = styled.div`
     width: 100%;
+    height: 150px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
 `;
 const SocialLoginButton = styled.img`
     width: 168px;
+    height: 40px;
     cursor: pointer;
 `;
 export default Login;
