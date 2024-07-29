@@ -1,24 +1,34 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 import kakaoImg from "../asset/kakao_login.png";
 import naverImg from "../asset/naver_login.png";
 import googleImg from "../asset/google_login.png";
 
-const Login = ({ onKakaoLogin, onNaverLogin, onGoogleLogin }) => {
+const Login = ({ onSocialLogin, onChange, loginForm, onSignIn }) => {
     return (
         <Container>
             <LoginTitleText>로그인 하쇼</LoginTitleText>
             <LoginContainer>
                 <LoginInputContainer>
-                    <InputForm type="text" placeholder="아이디"/>
-                    <InputForm type="password" placeholder="비밀번호"/>
+                    <InputForm name="email" type="text" placeholder="이메일(아이디)" value={loginForm.email} onChange={onChange}/>
+                    <InputForm name="pw" type="password" placeholder="비밀번호" value={loginForm.pw} onChange={onChange}/>
                 </LoginInputContainer>
-                <LoginButton>로그인</LoginButton>
+                <LoginButton onClick={onSignIn}>로그인</LoginButton>
             </LoginContainer>
-            <SocialLoginButtonContainer>
-                <SocialLoginButton src={kakaoImg} onClick={onKakaoLogin}/>
-                <SocialLoginButton src={naverImg} onClick={onNaverLogin}/>
-                <SocialLoginButton src={googleImg} onClick={onGoogleLogin}/>
-            </SocialLoginButtonContainer>
+            <SignUpText to={"/signup"}>회원가입 할래요</SignUpText>
+            <SocialLoginContainer>
+                <SocialLoginTextContainer>
+                    <div/>
+                    <SocialLoginText>SNS 계정으로 로그인</SocialLoginText>
+                    <div/>
+                </SocialLoginTextContainer>
+                <SocialLoginButtonContainer>
+                    <SocialLoginButton src={kakaoImg} onClick={() => onSocialLogin("kakao")}/>
+                    <SocialLoginButton src={naverImg} onClick={() => onSocialLogin("naver")}/>
+                    <SocialLoginButton src={googleImg} onClick={() => onSocialLogin("google")}/>
+                </SocialLoginButtonContainer>
+            </SocialLoginContainer>
         </Container>
     )
 }
@@ -38,7 +48,6 @@ const LoginContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 50px;
 `;
 const LoginInputContainer = styled.div`
     width: 100%;
@@ -65,6 +74,35 @@ const LoginButton = styled.button`
         background-color: #D5D5D5;
     }
 `;
+const SignUpText = styled(Link)`
+    margin-top: 15px;
+    color: black;
+    text-decoration: none;
+`;
+const SocialLoginContainer = styled.div`
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+`;
+const SocialLoginTextContainer = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    div {
+        width: 35%;
+        height: 1px;
+        background-color: #212121;
+    }
+`;
+const SocialLoginText = styled.p`
+    width: 50%;
+    padding: 0 5px;
+    text-align: center;
+    color: #212121;
+`;
 const SocialLoginButtonContainer = styled.div`
     width: 100%;
     height: 150px;
@@ -74,7 +112,7 @@ const SocialLoginButtonContainer = styled.div`
     justify-content: space-evenly;
 `;
 const SocialLoginButton = styled.img`
-    width: 168px;
+    width: 200px;
     height: 40px;
     cursor: pointer;
 `;
