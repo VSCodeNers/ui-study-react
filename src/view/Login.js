@@ -5,7 +5,7 @@ import kakaoImg from "../asset/kakao_login.png";
 import naverImg from "../asset/naver_login.png";
 import googleImg from "../asset/google_login.png";
 
-const Login = ({ onSocialLogin, onChange, loginForm, onSignIn }) => {
+const Login = ({ onSocialLogin, onChange, loginForm, onSignIn, signInGoogle }) => {
     return (
         <Container>
             <LoginTitleText>로그인 하쇼</LoginTitleText>
@@ -26,7 +26,7 @@ const Login = ({ onSocialLogin, onChange, loginForm, onSignIn }) => {
                 <SocialLoginButtonContainer>
                     <SocialLoginButton src={kakaoImg} onClick={() => onSocialLogin("kakao")}/>
                     <SocialLoginButton src={naverImg} onClick={() => onSocialLogin("naver")}/>
-                    <SocialLoginButton src={googleImg} onClick={() => onSocialLogin("google")}/>
+                    <SocialLoginButton src={googleImg} onClick={signInGoogle}/>
                 </SocialLoginButtonContainer>
             </SocialLoginContainer>
         </Container>

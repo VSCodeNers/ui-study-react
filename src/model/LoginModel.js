@@ -11,9 +11,9 @@ export const getNaverUrl = () => {
     return `https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=${CLIENT_ID}&state=${STATE}&redirect_uri=${REDIRECT_URI}`;
 };
 
-export const getGoogleUrl = () => {
-    const CLIENT_ID = process.env.REACT_APP_G_CLIENT_ID;
-    const PASSWORD = process.env.REACT_APP_G_PASSWORD;
-    const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI;
-    return `https://accounts.google.com/o/oauth2/auth?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code&scope=openid email profile`;
-};
+// export const getGoogleUrl = () => {
+//     const CLIENT_ID = process.env.REACT_APP_G_CLIENT_ID;
+//     const PASSWORD = process.env.REACT_APP_G_PASSWORD;
+//     const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI;
+//     return `https://accounts.google.com/o/oauth2/auth?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code&scope=openid email profile`;
+// };
