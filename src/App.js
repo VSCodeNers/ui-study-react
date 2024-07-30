@@ -4,9 +4,9 @@ import "./App.css";
 import { db } from "./firebase";
 
 import Redirect from "./view/Redirect";
-import Main from "./view/Main";
 import LoginController from "./controller/LoginController";
 import SignUpController from "./controller/SignUpController";
+import HomeController from "./controller/HomeController";
 
 function App() {
   console.log(db);
@@ -18,7 +18,7 @@ function App() {
           <Route path="/" element={<LoginController/>}/>
           <Route path="/oauth" element={<Redirect/>}/>
           <Route path="/signup" element={<SignUpController/>}/>
-          <Route path="/main" element={<Main/>}/>
+          <Route path="/main" element={<HomeController/>}/>
         </Routes>
       </BrowserRouter>
     </div>
