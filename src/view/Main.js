@@ -1,13 +1,12 @@
 import styled from "styled-components";
-import StatusBar from "./StatusBar";
+import StatusBarController from "../controller/StatusBarController";
 
 const Main = ({ onCapture }) => {
-    console.log(onCapture);
     return (
         <Container>
             <p id="content">메인</p>
             <button onClick={onCapture}>click</button>
-            <StatusBar/>
+            <StatusBarController/>
         </Container>
     )
 }
