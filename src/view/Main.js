@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import StatusBar from "./StatusBar";
 
 const Main = ({ onCapture }) => {
     console.log(onCapture);
@@ -6,6 +7,7 @@ const Main = ({ onCapture }) => {
         <Container>
             <p id="content">메인</p>
             <button onClick={onCapture}>click</button>
+            <StatusBar/>
         </Container>
     )
 }
